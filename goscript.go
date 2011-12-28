@@ -10,6 +10,7 @@ import(
 
 func execute(c string, args ... string) {
     cmd := exec.Command(c, args...)
+    cmd.Stdin = os.Stdin
     cmd.Stdout = os.Stdout
     cmd.Stderr = os.Stderr
     err := cmd.Run()
